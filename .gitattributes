@@ -1,0 +1,1 @@
+src/main/resources/jasmine/jragon/gtfsreborn/data_files/GTFS_Chicago/*.txt filter=lfs diff=lfs merge=lfs -text
