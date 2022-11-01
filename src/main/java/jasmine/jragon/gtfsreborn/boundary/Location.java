@@ -19,8 +19,16 @@ public record Location(double latitude, double longitude) {
         return calculateDistance(this, otherLocation) * EARTH_RADIUS_MI;
     }
 
+    /**
+     * Gives the distance between the current location and a
+     * given start/endpoint. This uses Haversine's formula to calculate the distance
+     * between two points on a given spherical object using its radius.
+     *
+     * @param otherLocation The location being compared to with the current location
+     * @return The distance in kilometers
+     */
     public double calculateDistanceToKilometers(Location otherLocation) {
-        if (this.latitude == otherLocation.latitude && this.longitude == otherLocation.longitude) {
+        if (this.equals(otherLocation)) {
             return 0;
         }
 
